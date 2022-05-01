@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Anime Bar Graph</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                height: 100vh;
+                font-size: 15px;
+            }
+
+            .main {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .canvas {
+                width: 150px;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                background-color: rgb(252, 249, 249);
+                padding: 9px 12px;
+            }
+
+            .canvas .barGraph {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 12px;
+            }
+
+            .barColumn {
+                position: relative;
+                height: auto;
+                text-align: center;
+            }
+
+            .barContainer {
+                height: 210px;
+                position: relative;
+                text-align: center;
+                width: 30px;
+                background-color: white;
+                margin-bottom: 15px;
+            }
+
+            .barContainer .bar {
+                bottom: 0px;
+                position: absolute;
+                width: 30px;
+                background-color: rgb(215, 203, 203);
+            }
+
+            .barColumn .percentage {
+                font-size: 15px;
+            }
+
+            #bar1 .bar {
+                animation-name: bar1-animation;
+                animation-duration: 3s;
+                animation-delay: 1s;
+            }
+
+            #bar2 .bar {
+                animation-name: bar2-animation;
+                animation-duration: 3s;
+                animation-delay: 1s;
+            }
+
+            #bar3 .bar {
+                animation-name: bar3-animation;
+                animation-duration: 3s;
+                animation-delay: 1s;
+            }
+
+            .canvas .caption {
+                align-self: center;
+                margin-bottom:0;
+            }
+
+            @keyframes bar1-animation {
+                from {
+                    height: 0%;
+                }
+                to {
+                    height: 30%;
+                }
+            }
+
+            @keyframes bar2-animation {
+                from {
+                    height: 0%;
+                }
+                to {
+                    height: 40%;
+                }
+            }
+
+            @keyframes bar3-animation {
+                from {
+                    height: 0%;
+                }
+                to {
+                    height: 80%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <section class="main">
+            <div class="canvas">
+                <div class="barGraph">
+                    <div class="barColumn">
+                        <div id="bar1" class="barContainer">
+                            <div class="bar" data-percentage="30%"></div>
+                        </div>
+                        <span class="percentage">30%</span>
+                    </div>
+                    
+                    <div class="barColumn">
+                        <div id="bar2" class="barContainer">
+                            <div class="bar" data-percentage="40%"></div>
+                        </div>
+                        <span class="percentage">40%</span>
+                    </div>
+                    
+                    <div class="barColumn">
+                        <div id="bar3" class="barContainer">
+                            <div class="bar" data-percentage="80%"></div>
+                        </div>
+                        <span class="percentage">80%</span>
+                    </div>
+                </div>
+                <h1 class="caption">
+                    Bar Plot
+                </h1>
+            </div>
+        </section>
+    </body>
+</html>
